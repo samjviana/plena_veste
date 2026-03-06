@@ -4,7 +4,7 @@ import 'package:plena_veste/di.dart';
 import 'package:plena_veste/pages/home/home_page.dart';
 
 class MenuState extends ChangeNotifier {
-    int _selectedIndex = 0;
+    int _selectedIndex = 1;
     int get selectedIndex => _selectedIndex;
     set selectedIndex(int value) {
         if (_selectedIndex == value) return;
@@ -16,13 +16,19 @@ class MenuState extends ChangeNotifier {
     // TODO: The use of a custom widget for the navigation rail should allow a more structured way to manage the destinations avoiding multiple classes in the same file.
     List<Destination> get destinations => [
         Destination(
-            icon: const Icon(Icons.home),
+            icon: const Icon(Icons.home_rounded),
             label: 'Home',
             page: HomePage()
-        )
+        ),
+        Destination(
+            icon: const Icon(Icons.shopping_bag_rounded),
+            label: 'Vestidos',
+            page: Container()
+        ),
     ];
 
     final GoogleOAuthService oauth = getIt<GoogleOAuthService>();
+    late final Future<bool> initFuture;
 }
 
 class Destination {
