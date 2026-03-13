@@ -92,26 +92,6 @@ class _DressesPageState extends State<DressesPage> {
                                                             Spacer(),
                                                             Row(
                                                                 children: [
-                                                                    
-                                                                ]
-                                                            ),
-                                                        ],
-                                                    ),
-                                                    Spacer(),
-                                                    Column(
-                                                        crossAxisAlignment: CrossAxisAlignment.end,
-                                                        children: [
-                                                            Text(
-                                                                'R\$ ${(dress.rentalPrice / 100).toStringAsFixed(2)}',
-                                                                style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
-                                                            ),
-                                                            Text(
-                                                                'R\$ ${(dress.purchasePrice / 100).toStringAsFixed(2)}',
-                                                                style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant),
-                                                            ),
-                                                            Spacer(),
-                                                            Row(
-                                                                children: [
                                                                     Container(
                                                                         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                                                                         decoration: BoxDecoration(
@@ -134,6 +114,35 @@ class _DressesPageState extends State<DressesPage> {
                                                                             'Alugado ${dress.timesRented}x',
                                                                             style: Theme.of(context).textTheme.labelMedium?.copyWith(color: Theme.of(context).textTheme.labelMedium!.color!),
                                                                         ),
+                                                                    ),
+                                                                ]
+                                                            ),
+                                                        ],
+                                                    ),
+                                                    Spacer(),
+                                                    Column(
+                                                        crossAxisAlignment: CrossAxisAlignment.end,
+                                                        children: [
+                                                            Text(
+                                                                'R\$ ${(dress.rentalPrice / 100).toStringAsFixed(2)}',
+                                                                style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+                                                            ),
+                                                            Text(
+                                                                'R\$ ${(dress.purchasePrice / 100).toStringAsFixed(2)}',
+                                                                style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant),
+                                                            ),
+                                                            Spacer(),
+                                                            Row(
+                                                                mainAxisSize: MainAxisSize.min,
+                                                                mainAxisAlignment: MainAxisAlignment.end,
+                                                                children: [
+                                                                    ElevatedButton(
+                                                                        onPressed: () => _logic.onDeleteDress(context, dress),
+                                                                        style: ElevatedButton.styleFrom(
+                                                                            shape: CircleBorder(),
+                                                                            backgroundColor: Theme.of(context).colorScheme.errorContainer,
+                                                                        ),
+                                                                        child: const Icon(Icons.delete_outline_rounded),
                                                                     ),
                                                                 ]
                                                             )

@@ -133,6 +133,12 @@ class _DressDetailDialogState extends State<DressDetailDialog> {
                                                                     flex: 30,
                                                                     child: TextFormField(
                                                                         decoration: InputDecoration(
+                                                                            prefix: Text(
+                                                                                'PV-',
+                                                                                style: TextStyle(
+                                                                                    color: Theme.of(context).textTheme.bodyMedium!.color,
+                                                                                ),
+                                                                            ),
                                                                             labelText: 'Código',
                                                                         ),
                                                                         keyboardType: TextInputType.number,

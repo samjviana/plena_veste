@@ -46,3 +46,6 @@ app.*.map.json
 
 # Google OAuth2 related
 assets/oauth_client.json
+
+# Remove files tagged as "GPT"
+*.gpt
