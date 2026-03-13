@@ -46,6 +46,11 @@ dependencies:
   google_sign_in_all_platforms: ^2.0.2
   get_it: ^9.2.1
   synchronized: ^3.4.0
+  uuid: ^4.5.3
+  mask_text_input_formatter: ^2.9.0
+  file_picker: ^10.3.10
+  intl: ^0.20.2
+  bitsdojo_window: ^0.1.6
 
 dev_dependencies:
   flutter_test:

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plena_veste/auth/oauth_service.dart';
 import 'package:plena_veste/di.dart';
+import 'package:plena_veste/pages/dresses/dresses_page.dart';
 import 'package:plena_veste/pages/home/home_page.dart';
 
 class MenuState extends ChangeNotifier {
@@ -23,7 +24,7 @@ class MenuState extends ChangeNotifier {
         Destination(
             icon: const Icon(Icons.shopping_bag_rounded),
             label: 'Vestidos',
-            page: Container()
+            page: DressesPage()
         ),
     ];
 
