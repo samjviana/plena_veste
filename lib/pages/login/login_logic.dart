@@ -14,4 +14,9 @@ class LoginLogic {
         await _state.oauth.signIn();
         _setState(() {});
     }
+
+    void logout() async {
+        await _state.oauth.signOut();
+        _setState(() {});
+    }
 }

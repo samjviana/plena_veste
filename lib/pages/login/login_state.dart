@@ -4,4 +4,6 @@ import 'package:plena_veste/di.dart';
 
 class LoginState extends ChangeNotifier {
     final GoogleOAuthService oauth = getIt<GoogleOAuthService>();
+
+    bool isLoggedIn = false;
 }

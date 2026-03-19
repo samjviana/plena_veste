@@ -36,6 +36,10 @@ class _MenuPageState extends State<MenuPage> {
                 }
 
                 if (snapshot.hasError || !snapshot.hasData || snapshot.data == false) {
+                    final String message = snapshot.error.toString();
+                    if (message.contains('invalid_grant Token has been expired or revoked')) {
+                        _logic.logout(context);
+                    }
                     return ErrorWidget(snapshot.error!);
                 }
 

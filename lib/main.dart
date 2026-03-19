@@ -5,7 +5,11 @@ import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:plena_veste/di.dart';
+import 'package:plena_veste/logger.dart';
 import 'package:plena_veste/pages/login/login_page.dart';
+
+const appTitle = 'Plena Veste';
+const appVersion = '0.1.0';
 
 void main() {
     setupDependencies();
@@ -20,6 +24,9 @@ void main() {
 
         appWindow.size = Size(minSize * 0.85, minSize * 0.7);
         appWindow.minSize = const Size(960, 640);
+
+        appWindow.title = '$appTitle v$appVersion';
+
         appWindow.show();
     });
 }

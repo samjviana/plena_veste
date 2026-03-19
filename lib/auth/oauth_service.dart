@@ -128,8 +128,21 @@ class GoogleOAuthService {
     // TODO: The login/logout flow seems very basic, maybe they can be removed or at least refactored to have better error handling and logging
     Future<bool> tryRestoreSession() async {
         final session = await googleSignIn;
-        final creds = await session.silentSignIn();
-        return creds != null;
+        try {
+            final creds = await session.silentSignIn();
+            return creds != null;
+        } catch (e) {
+            final text = e.toString().toLowerCase();
+            if (text.contains('invalid_grant')) {
+                try {
+                    await session.signOut();
+                } catch (_) {}
+            } else {
+                rethrow;
+            }
+        }
+
+        return false;
     }
 
     Future<bool> signIn() async {
